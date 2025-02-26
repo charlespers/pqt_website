@@ -3,9 +3,18 @@
 @tailwind utilities;
 
 body {
-  @apply bg-gray-900 text-white min-h-screen flex flex-col;
+  @apply bg-gray-950 text-gray-200 min-h-screen flex flex-col;
+  font-family: 'Inter', sans-serif;
 }
 
 .container {
-  @apply max-w-6xl mx-auto px-4;
+  @apply max-w-7xl mx-auto px-6;
+}
+
+.glass {
+  @apply bg-white/10 backdrop-blur-lg rounded-xl shadow-lg p-6;
+}
+
+button {
+  @apply bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition-all;
 }
