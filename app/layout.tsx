@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import "./globals.css";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
+  // Declare nonce before the return statement
   const nonce = "random123"; // Replace with a dynamic nonce later if needed
 
   return (
@@ -22,14 +23,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         {children}
       </motion.div>
       <Footer />
-      <style nonce="KchHh8yEwDMFQLpu9PNPig==">
-  body {
-    background-color: #111;
-  }
-  a {
-    color: #4f46e5;
-  }
-</style>
     </div>
   );
 }
