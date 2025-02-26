@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import "./globals.css";
 
-export default function Layout({ children }) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div>
       <nav className="bg-black p-4 shadow-lg">
