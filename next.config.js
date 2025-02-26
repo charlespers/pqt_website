@@ -1,13 +1,13 @@
-module.exports = {
-    reactStrictMode: true,
+/** @type {import('next').NextConfig} */
+const nextConfig = {
     async headers() {
       return [
         {
-          source: '/(.*)',
+          source: "/:path*",
           headers: [
             {
-              key: 'Content-Security-Policy',
-              value: "default-src 'self'; script-src 'self' https://trustedsource.com; object-src 'none'; base-uri 'self';",
+              key: "Content-Security-Policy",
+              value: "default-src 'self'; style-src 'self' 'unsafe-inline' 'nonce-random123';",
             },
           ],
         },
@@ -15,3 +15,4 @@ module.exports = {
     },
   };
   
+  module.exports = nextConfig;
