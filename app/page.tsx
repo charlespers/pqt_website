@@ -6,7 +6,7 @@ export default function Home() {
     <motion.div 
       initial={{ opacity: 0, scale: 0.95 }} 
       animate={{ opacity: 1, scale: 1 }} 
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.6 }}
       className="flex flex-col items-center justify-center min-h-screen text-center glass">
       <h2 className="text-5xl font-extrabold text-blue-400">Welcome to Princeton Quantitative Traders</h2>
       <p className="mt-4 text-lg text-gray-300">
