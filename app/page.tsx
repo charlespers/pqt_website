@@ -1,10 +1,17 @@
 export default function Home() {
     return (
-      <div className="text-center">
-        <h1 className="text-4xl font-bold text-blue-400">Welcome to Princeton QT</h1>
-        <p className="mt-4 text-lg text-gray-300">
-          Leading innovation in quantum technology.
+      <main className="container">
+        <h1>Welcome to Princeton Quantitative Traders</h1>
+        <p>
+          Princeton Quantitative Traders (PQT) is a student-run organization dedicated to exploring algorithmic 
+          and quantitative trading strategies. We aim to bridge the gap between financial markets and 
+          cutting-edge technology, equipping members with the skills needed to thrive in quantitative finance.
         </p>
-      </div>
+        <p>
+          Our club offers workshops, trading competitions, and collaborative research opportunities. 
+          Whether you're a beginner or an experienced coder, PQT is the perfect place to enhance your understanding of 
+          market dynamics, statistical modeling, and automated trading.
+        </p>
+      </main>
     );
   }
