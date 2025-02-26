@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    reactStrictMode: true,
     async headers() {
       return [
         {
@@ -8,12 +7,15 @@ const nextConfig = {
           headers: [
             {
               key: "Content-Security-Policy",
-              value: "default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; font-src 'self';",
+              value:
+                "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';",
             },
           ],
         },
       ];
     },
+    reactStrictMode: true,
+    swcMinify: true,
   };
   
   module.exports = nextConfig;
