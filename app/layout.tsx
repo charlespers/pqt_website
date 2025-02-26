@@ -2,7 +2,7 @@ import "./globals.css";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { LaTeX } from "react-latex";
-import TradingGraph from ".TradingGraph.tsx";
+import TradingGraph from "./TradingGraph";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
