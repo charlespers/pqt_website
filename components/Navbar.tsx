@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-export default function Navbar() {
+const Navbar = () => {
   return (
-    <nav className="navbar">
-      <div className="flex gap-6">
+    <nav className="bg-gray-900 text-white p-4">
+      <div className="flex space-x-6">
         <Link href="/">Home</Link>
         <Link href="/about">About</Link>
         <Link href="/contact">Contact</Link>
@@ -11,4 +11,6 @@ export default function Navbar() {
       </div>
     </nav>
   );
-}
+};
+
+export default Navbar; 
