@@ -1,5 +1,5 @@
 {
-    "name": "princeton-qt-website",
+    "name": "princeton-qt",
     "version": "1.0.0",
     "private": true,
     "scripts": {
@@ -11,14 +11,12 @@
       "next": "latest",
       "react": "latest",
       "react-dom": "latest",
-      "framer-motion": "latest",
       "tailwindcss": "latest",
-      "postcss": "latest",
-      "autoprefixer": "latest"
+      "framer-motion": "latest"
     },
     "devDependencies": {
+      "typescript": "latest",
       "@types/react": "latest",
-      "@types/node": "latest",
-      "typescript": "latest"
+      "@types/node": "latest"
     }
   }

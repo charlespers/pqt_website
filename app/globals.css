@@ -2,23 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-gradient-to-r from-gray-900 via-black to-gray-950 text-gray-200 min-h-screen flex flex-col;
-  font-family: 'Inter', sans-serif;
-}
-
-.container {
-  @apply max-w-7xl mx-auto px-6;
-}
-
-.glass {
-  @apply bg-white/10 backdrop-blur-lg rounded-xl shadow-xl p-6 transition-all hover:shadow-2xl hover:scale-105;
-}
-
-button {
-  @apply bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition-all;
-}
-
 a {
-  @apply transition-all hover:underline hover:text-blue-400;
+  @apply text-blue-400 hover:text-blue-600;
 }
