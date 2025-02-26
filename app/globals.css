@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;700&display=swap");
-
+/* GLOBAL STYLES */
 html, body {
   font-family: 'Inter', sans-serif;
   background-color: #0a192f;
@@ -9,37 +8,59 @@ html, body {
   scroll-behavior: smooth;
 }
 
-h1, h2, h3 {
+/* HEADERS & TEXT */
+h1 {
+  font-size: 4rem;
   font-weight: 700;
   color: #64ffda;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: #8892b0;
+}
+
+p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #a8b2d1;
 }
 
 a {
   color: #64ffda;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease-in-out;
 }
 
 a:hover {
   color: #8892b0;
 }
 
+/* NAVBAR */
 nav {
   background: rgba(10, 25, 47, 0.9);
   padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
   backdrop-filter: blur(10px);
   box-shadow: 0px 10px 30px -10px rgba(2,12,27,0.7);
 }
 
-.navbar-links {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.navbar-links a {
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 10px 15px;
+  transition: 0.3s;
 }
 
-.navbar-links a {
-  margin-right: 20px;
-  font-weight: 300;
+.navbar-links a:hover {
+  color: #64ffda;
+  text-shadow: 0 0 10px rgba(100, 255, 218, 0.8);
 }
 
 /* HERO SECTION */
@@ -61,7 +82,7 @@ nav {
   color: #8892b0;
 }
 
-/* 🔥 MATH BACKGROUND */
+/* MATH BACKGROUND */
 .math-background {
   position: fixed;
   top: 0;
@@ -69,20 +90,20 @@ nav {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  opacity: 0.15;
-  font-size: 20px;
+  opacity: 0.1;
+  font-size: 22px;
   color: #8892b0;
   font-family: 'Courier New', Courier, monospace;
 }
 
 .math-background::before {
-  content: "E = mc²   ∫ e^x dx = e^x + C   Σ (n=1 to ∞) 1/n² = π²/6   d/dx sin(x) = cos(x)";
+  content: "∫ e^x dx = e^x + C   Σ (n=1 to ∞) 1/n² = π²/6   d/dx sin(x) = cos(x)";
   position: absolute;
   white-space: nowrap;
   width: 200%;
   left: -50%;
   top: 50%;
-  animation: scroll-math 20s linear infinite;
+  animation: scroll-math 15s linear infinite;
 }
 
 @keyframes scroll-math {
