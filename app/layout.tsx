@@ -3,7 +3,7 @@ import "./globals.css";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div>
+    <div className="min-h-screen flex flex-col">
       <nav className="bg-black p-4 shadow-lg">
         <div className="container flex justify-between items-center">
           <h1 className="text-xl font-bold">Princeton Quantitative Traders</h1>
@@ -16,7 +16,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </ul>
         </div>
       </nav>
-      <main className="container mt-8">{children}</main>
+      <main className="container mt-8 flex-grow">{children}</main>
     </div>
   );
 }
