@@ -1,5 +1,10 @@
 "use client";
-import { motion } from "framer-motion";
+
+import Link from 'next/link';
+import "./globals.css";
+import { usePathname } from 'next/navigation';
+import { motion } from 'framer-motion';
+
 
 export default function Home() {
   return (
