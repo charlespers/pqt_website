@@ -1,26 +1,13 @@
 "use client";
-import { useEffect } from 'react';
+import { motion } from "framer-motion";
 
 export default function Home() {
-  useEffect(() => {
-    const container = document.getElementById("content-container");
-    if (container) {
-      const newElement = document.createElement("p");
-      newElement.textContent = "Dynamic content loaded!";
-      container.appendChild(newElement);
-
-      return () => {
-        if (container.contains(newElement)) {
-          container.removeChild(newElement);
-        } else {
-          console.error("The node to be removed is not a child of this node.");
-        }
-      };
-    }
-  }, []);
-
   return (
-    <div id="content-container" className="flex flex-col items-center justify-center min-h-screen text-center glass">
+    <motion.div 
+      initial={{ opacity: 0, scale: 0.95 }} 
+      animate={{ opacity: 1, scale: 1 }} 
+      transition={{ duration: 0.5 }}
+      className="flex flex-col items-center justify-center min-h-screen text-center glass">
       <h2 className="text-5xl font-extrabold text-blue-400">Welcome to Princeton Quantitative Traders</h2>
       <p className="mt-4 text-lg text-gray-300">
         We leverage quantitative methods to gain a competitive edge in trading.
@@ -30,6 +17,6 @@ export default function Home() {
           Learn More
         </a>
       </div>
-    </div>
+    </motion.div>
   );
 }

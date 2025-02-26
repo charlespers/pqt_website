@@ -1,9 +1,10 @@
+/* globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  @apply bg-gray-950 text-gray-200 min-h-screen flex flex-col;
+  @apply bg-gradient-to-r from-gray-900 via-black to-gray-950 text-gray-200 min-h-screen flex flex-col;
   font-family: 'Inter', sans-serif;
 }
 
@@ -12,9 +13,13 @@ body {
 }
 
 .glass {
-  @apply bg-white/10 backdrop-blur-lg rounded-xl shadow-lg p-6;
+  @apply bg-white/10 backdrop-blur-lg rounded-xl shadow-xl p-6 transition-all hover:shadow-2xl;
 }
 
 button {
   @apply bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition-all;
+}
+
+a {
+  @apply transition-all hover:underline;
 }
