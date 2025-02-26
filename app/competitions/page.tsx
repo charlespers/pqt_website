@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 export default function Competitions() {
   return (
     <motion.div className="glass mt-10" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }}>
