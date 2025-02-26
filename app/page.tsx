@@ -1,25 +1,8 @@
 "use client";
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 export default function Home() {
-  const [socket, setSocket] = useState<WebSocket | null>(null);
-
   useEffect(() => {
-    // WebSocket connection with reconnection logic
-    const connectWebSocket = () => {
-      const ws = new WebSocket("wss://your-websocket-server.com");
-      
-      ws.onopen = () => console.log("WebSocket Connected");
-      ws.onclose = (e) => {
-        console.error("WebSocket closed, reconnecting...", e.reason);
-        setTimeout(connectWebSocket, 3000); // Retry in 3s
-      };
-      ws.onerror = (error) => console.error("WebSocket Error", error);
-      setSocket(ws);
-    };
-
-    connectWebSocket();
-
     const container = document.getElementById("content-container");
     if (container) {
       const newElement = document.createElement("p");
