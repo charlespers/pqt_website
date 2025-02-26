@@ -1,8 +1,8 @@
 "use client";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import "./globals.css"; 
 
 export default function Layout({ children }: { children: React.ReactNode }) {
