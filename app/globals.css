@@ -1,88 +1,67 @@
-/* Root Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Neon Theme */
+/* --- 🔥 Custom Fonts 🔥 --- */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;700&display=swap");
+
 body {
-  background-color: #0a0a0a;
-  color: #eaeaea;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  @apply bg-gray-900 text-white font-[Inter] min-h-screen flex flex-col items-center justify-center;
 }
 
-/* Glowing Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 20px;
-  background: rgba(10, 10, 10, 0.8);
-  backdrop-filter: blur(15px);
-  border-bottom: 2px solid #444;
-  position: fixed;
-  top: 0;
-  z-index: 100;
-}
-
-.navbar .logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #facc15;
-}
-
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-}
-
-.navbar a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s ease-in-out;
-  font-size: 18px;
-}
-
-.navbar a:hover {
-  color: #facc15;
-}
-
-/* Quantum Glow Buttons */
-button {
-  background: linear-gradient(45deg, #ff6b6b, #facc15);
-  border: none;
-  padding: 12px 20px;
-  border-radius: 10px;
-  font-size: 18px;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
-}
-
-/* Page Transitions */
-.fade-in {
-  animation: fadeIn 0.8s ease-in-out;
-}
-
+/* --- 🚀 Professional Animations --- */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(-10px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.animate-fade {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* --- 📊 Advanced Quant Trading UI --- */
+h1 {
+  @apply text-6xl font-extrabold text-center mt-6 tracking-wide;
+  background: linear-gradient(90deg, #ff8a00, #da1b60);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navbar {
+  @apply w-full flex justify-between px-8 py-4 bg-black bg-opacity-20 backdrop-blur-md fixed top-0 z-50;
+}
+
+.navbar a {
+  @apply text-lg font-semibold text-gray-300 transition-all duration-300 hover:text-white hover:underline;
+}
+
+/* --- 🏆 Quantitative Finance Themed Background --- */
+.background-grid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 40px 40px;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  z-index: -1;
+  opacity: 0.4;
+}
+
+/* --- 📈 Trading Graph Styling --- */
+.trading-container {
+  @apply flex justify-center items-center p-8;
+}
+
+/* --- 💡 Mathematical Equations --- */
+.math-equation {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.2rem;
+  color: #0ff;
 }
