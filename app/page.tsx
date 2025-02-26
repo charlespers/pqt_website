@@ -1,22 +1,11 @@
 "use client";
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
-  useEffect(() => {
-    const container = document.getElementById("content-container");
-    if (container) {
-      const newElement = document.createElement("p");
-      newElement.textContent = "Dynamic content loaded!";
-      container.appendChild(newElement);
+  const [contentLoaded, setContentLoaded] = useState(false);
 
-      return () => {
-        if (container.contains(newElement)) {
-          container.removeChild(newElement);
-        } else {
-          console.error("The node to be removed is not a child of this node.");
-        }
-      };
-    }
+  useEffect(() => {
+    setContentLoaded(true);
   }, []);
 
   return (
@@ -25,6 +14,9 @@ export default function Home() {
       <p className="mt-4 text-lg text-gray-400">
         We leverage quantitative methods to gain a competitive edge in trading.
       </p>
+      {contentLoaded && (
+        <p className="mt-4 text-green-400">Dynamic content loaded successfully!</p>
+      )}
       <div className="mt-6">
         <a href="/mission" className="bg-blue-500 px-6 py-2 rounded-full text-white font-bold">
           Learn More
