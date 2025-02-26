@@ -100,7 +100,7 @@ nav {
   content: "∫ e^x dx = e^x + C   Σ (n=1 to ∞) 1/n² = π²/6   d/dx sin(x) = cos(x)";
   position: absolute;
   white-space: nowrap;
-  width: 200%;
+  width: 50%;
   left: -50%;
   top: 50%;
   animation: scroll-math 15s linear infinite;
