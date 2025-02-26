@@ -12,6 +12,8 @@ export default function Home() {
       return () => {
         if (container.contains(newElement)) {
           container.removeChild(newElement);
+        } else {
+          console.error("The node to be removed is not a child of this node.");
         }
       };
     }
