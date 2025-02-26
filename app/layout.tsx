@@ -22,12 +22,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         {children}
       </motion.div>
       <Footer />
-      <style nonce={nonce}>
-        {`
-          body { background-color: #111; }
-          a { color: #4f46e5; }
-        `}
-      </style>
+      <style nonce="KchHh8yEwDMFQLpu9PNPig==">
+  body {
+    background-color: #111;
+  }
+  a {
+    color: #4f46e5;
+  }
+</style>
     </div>
   );
 }
