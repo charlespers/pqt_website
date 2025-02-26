@@ -16,7 +16,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </ul>
         </div>
       </nav>
-      <main className="container mt-8 flex-grow">{children}</main>
+      <main className="container flex-grow">{children}</main>
     </div>
   );
 }

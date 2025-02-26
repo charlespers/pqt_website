@@ -1,11 +1,11 @@
+/* globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  @apply bg-gray-900 text-white min-h-screen;
+  @apply bg-gray-900 text-white min-h-screen flex flex-col;
 }
-
 
 .container {
   @apply max-w-6xl mx-auto px-4;
