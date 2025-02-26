@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-
 body {
-  @apply bg-gray-900 text-white;
+  @apply bg-gray-900 text-white min-h-screen;
 }
+
 
 .container {
   @apply max-w-6xl mx-auto px-4;
