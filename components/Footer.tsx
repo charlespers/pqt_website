@@ -1,3 +1,6 @@
+"use client";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 export default function Footer() {
     return (
       <footer className="bg-gray-800 p-4 text-center mt-10">
