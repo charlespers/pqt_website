@@ -11,7 +11,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navbar />
         <FractalBackground />
         <SpinningWheel />
-        
+
         {/* Hero Section */}
         <section className="hero-section">
           <h1 className="hero-title">Welcome to Princeton QT</h1>
