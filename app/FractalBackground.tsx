@@ -1,4 +1,4 @@
-"use client"; // This marks this component as a client component
+"use client"; // This marks the component as client-side only
 
 import { useEffect, useRef, useState } from "react";
 
@@ -128,7 +128,16 @@ const FractalBackground = () => {
   }
 
   return (
-    <div className="absolute top-0 left-0 w-full h-full z-[-1]"> {/* Ensures it's behind all content */}
+    <div
+      className="absolute top-0 left-0 w-full h-full z-[-1]"
+      style={{
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        pointerEvents: 'none', // Prevent the canvas from blocking interactions
+      }}
+    >
       <canvas ref={canvasRef} width={canvasDimensions.width} height={canvasDimensions.height}></canvas>
     </div>
   );
