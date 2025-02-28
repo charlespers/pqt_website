@@ -240,15 +240,11 @@ a:hover {
 .object-cover {
   object-fit: cover;
 }
-@media (min-width: 640px) {
-  .grid-cols-2 {
-    display: grid;
+@media (min-width: 640px) { /* 2 Columns on Larger Screens */
+  .member-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.5rem;
   }
 }
-
-
 .member-card img {
   border-radius: 50%;
   object-fit: cover;
@@ -265,8 +261,8 @@ a:hover {
 
 .member-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(10vw, 1fr)); /* Ensures two columns */
-  gap: 5%;
+  grid-template-columns: 1fr; /* Default: Single Column */
+  gap: 1.5rem;
   justify-content: center;
   align-items: center;
   text-align: center;
