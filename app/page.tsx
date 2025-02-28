@@ -26,22 +26,22 @@ export default function Home() {
           <h3>
           What We Do
           </h3>
-          <p className="text-lg mt-4 text-left">
+          <p className="text-lg mt-4 justify-left">
             <strong>Strategy Research</strong> – We research and build algorithmic trading strategies using statistical models, machine learning, and financial data analysis.
           </p>
-          <p className="text-lg mt-2 text-left">
+          <p className="text-lg mt-2 justify-left">
             <strong>Technical Workshops</strong> – We offer hands-on training in Python, backtesting frameworks, and trading infrastructure to prepare members for real-world applications.
           </p>
-          <p className="text-lg mt-2 text-left">
+          <p className="text-lg mt-2 justify-left">
             <strong>Trading Competitions</strong> – Members participate in simulated and live trading competitions to test strategies in dynamic market conditions.
           </p>
-          <p className="text-lg mt-2 text-left">
+          <p className="text-lg mt-2 justify-left">
             <strong>Industry & Career Development</strong> – We connect members with professionals, host guest speakers, and provide resources for careers in quantitative finance.
           </p>
-          <p className="text-lg mt-2 text-left">
+          <p className="text-lg mt-2 justify-left">
             <strong>Collaborations & Professionalism</strong> – We work with other trading clubs and research groups to explore cutting-edge developments in quantitative finance.
           </p>
-          <p className="text-lg mt-4 text-left font-bold">
+          <p className="text-lg mt-4 justify-left font-bold">
             Join us today!
           </p>
 
