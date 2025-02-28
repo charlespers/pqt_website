@@ -4,7 +4,7 @@ import MemberCard from "../components/MemberCard";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center text-white py-20 px-4">
+    <div className="content-box flex flex-col items-center text-white py-20 px-4">
       {/* Hero Section */}
       <section className="hero-section text-center w-full max-w-4xl">
         <h1 className="text-2xl sm:text-3xl font-bold uppercase text-orange-500">
