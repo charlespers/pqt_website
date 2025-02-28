@@ -13,14 +13,12 @@ html, body {
 h1 {
   font-size: 4rem;
   font-weight: 700;
-  color: #64ffda;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
 h2 {
   font-size: 2.5rem;
-  color: #8892b0;
 }
 
 p {
@@ -31,7 +29,6 @@ p {
 }
 
 a {
-  color: #64ffda;
   text-decoration: none;
   transition: color 0.3s ease-in-out;
 }
@@ -93,15 +90,6 @@ nav {
   z-index: -1; /* Ensures the background stays behind other content */
 }
 
-.math-background::before {
-  content: "∫ e^x dx = e^x + C   Σ (n=1 to ∞) 1/n² = π²/6   d/dx sin(x) = cos(x)";
-  position: absolute;
-  white-space: nowrap;
-  width: 50%;
-  left: -50%;
-  top: 50%;
-  animation: scroll-math 15s linear infinite;
-}
 
 @keyframes scroll-math {
   from { transform: translateX(0); }
