@@ -9,6 +9,7 @@ html, body {
   scroll-behavior: smooth;
   position: relative;
   z-index: 1;
+  padding-top: 4.5rem;
 }
 
 .main-content {
@@ -244,11 +245,6 @@ a:hover {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.5rem;
-  }
-}
-@media (max-width: 639px) {
-  .member-grid {
-    grid-template-columns: 1fr; /* Single column on small screens */
   }
 }
 
