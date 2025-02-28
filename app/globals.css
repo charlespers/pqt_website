@@ -39,15 +39,19 @@ html, body {
 
 /* Adjust width of the main content box */
 
-
 .content-box {
-  background: rgba(0, 0, 0, 0.85); /* Keeps the background semi-transparent */
+  width: 85%; 
+  max-width: 900px;
+  padding: 5%; /* Prevents text from getting cut */
   border-radius: 12px;
   box-shadow: 0 0 1.5vw rgba(255, 165, 0, 0.5); /* Orange glow */
-  width: 85%; 
-  padding: 5%; /* Adjusted padding to prevent text cutoff */
-  text-align: center;
   margin-bottom: 5%;
+  text-align: center;
+  margin: 0 auto; /* Centers the box horizontally */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Center images inside content-box */
