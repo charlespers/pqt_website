@@ -2,7 +2,7 @@ import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import FractalBackground from "./FractalBackground";
-import TradingAnimation from "./TradingAnimation";
+import SpinningWheel from "./SpinningWheel";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -10,7 +10,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Navbar />
         <FractalBackground />
-        <TradingAnimation />
+        <SpinningWheel />
         
         {/* Hero Section */}
         <section className="hero-section">
