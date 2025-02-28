@@ -9,8 +9,8 @@ export default function Home() {
         <h1 className="text-4xl sm:text-5xl font-bold uppercase text-orange-500">
             Princeton Quantitative Traders
         </h1>
-        <h2 className="text-lg sm:text-2xl text-gold mt-4">
-          Algorithmic Excellence. Mathematical Precision.
+        <h2 className="text-lg sm:text-2xl text-white mt-4">
+          •Research  •Projects  •Education  •Scholarship
         </h2>
       </section>
 
@@ -21,8 +21,15 @@ export default function Home() {
             <Image src="/PQT-Logo1.png" alt="PQT Logo" width={200} height={200} priority />
           </div>
           <p className="text-lg mt-4 text-center">
-            Our mission is to bridge the gap between Princeton students and quantitative finance 
-            through education, research, and competitions.
+          Welcome to  Princeton Quantitative Traders, a student-led quantitative trading club dedicated to exploring data-driven financial markets and algorithmic trading. Our mission is to equip members with the skills and knowledge needed to develop, test, and deploy quantitative trading strategies.
+What We Do
+Strategy Research – We research and build algorithmic trading strategies using statistical models, machine learning, and financial data analysis.
+Technical Workshops – We offer hands-on training in Python, backtesting frameworks, and trading infrastructure to prepare members for real-world applications.
+Trading Competitions – Members participate in simulated and live trading competitions to test strategies in dynamic market conditions.
+Industry & Career Development – We connect members with professionals, host guest speakers, and provide resources for careers in quantitative finance.
+Collaborations & Professionalism – We work with other trading clubs and research groups to explore cutting-edge developments in quantitative finance.
+Join us today!
+
           </p>
           <div className="flex justify-center mt-4">
             <Image
