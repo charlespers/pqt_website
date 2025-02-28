@@ -40,26 +40,31 @@ export default function Home() {
 
       {/* Meet Our Team Section */}
       <section className="home-content">
-        <div className="content-box content-wrapper">
+        <div className="content-box">
           <h2 className="text-3xl font-bold text-orange-500 text-center">Meet Our Team</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-6 justify-center items-center">
-            {/* Placeholder for member headshots - Replace with actual images */}
-            <div className="team-member">
-              <Image src="/members/president.png" alt="President" width={150} height={150} className="rounded-full" />
-              <p className="text-center mt-2 font-semibold">President</p>
-            </div>
-            <div className="team-member">
-              <Image src="/members/Charles.jpeg" alt="Vice President" width={150} height={150} className="rounded-full" />
-              <p className="text-center mt-2 font-semibold">Vice President</p>
-            </div>
-            <div className="team-member">
-              <Image src="/members/treasurer.png" alt="Treasurer" width={150} height={150} className="rounded-full" />
-              <p className="text-center mt-2 font-semibold">Treasurer</p>
-            </div>
-            <div className="team-member">
-              <Image src="/members/officer.png" alt="Officer" width={150} height={150} className="rounded-full" />
-              <p className="text-center mt-2 font-semibold">Officer</p>
-            </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-6">
+            {/* Team Members */}
+            {[
+              { name: "President", image: "/members/president.png" },
+              { name: "Vice President", image: "/members/vice-president.png" },
+              { name: "Treasurer", image: "/members/treasurer.png" },
+              { name: "Officer", image: "/members/officer.png" },
+              { name: "Member 1", image: "/members/member1.png" },
+              { name: "Member 2", image: "/members/member2.png" }
+            ].map((member, index) => (
+              <div key={index} className="team-member flex flex-col items-center">
+                <div className="w-32 h-32 overflow-hidden rounded-full border-4 border-orange-500">
+                  <Image 
+                    src={member.image} 
+                    alt={member.name} 
+                    width={128} 
+                    height={128} 
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <p className="text-center mt-2 font-semibold">{member.name}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
