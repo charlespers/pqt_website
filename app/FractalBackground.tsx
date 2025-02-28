@@ -21,7 +21,6 @@ const FractalBackground = () => {
     canvas.width = width;
     canvas.height = height;
 
-    // Define render function inside useEffect
     const renderFractal = () => {
       const maxIterations = 300;
       const scale = zoomRef.current;
@@ -90,9 +89,7 @@ const FractalBackground = () => {
     };
   }, []);
 
-  return (
-    <canvas ref={canvasRef} className="math-background" />
-  );
+  return <canvas ref={canvasRef} className="math-background" />;
 };
 
 export default FractalBackground;
