@@ -1,3 +1,5 @@
+"use client"; // Add this line at the top
+
 import { useEffect, useRef, useState } from "react";
 
 const FractalBackground = () => {
