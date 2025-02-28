@@ -1,3 +1,4 @@
+
 /* GLOBAL STYLES */
 html, body {
   font-family: 'Inter', sans-serif;
@@ -41,6 +42,7 @@ html, body {
 
 .content-box {
   width: 85%; 
+  background: rgba(0, 0, 0, 0.85); /* Keeps the background semi-transparent */
   max-width: 900px;
   padding: 5%; /* Prevents text from getting cut */
   border-radius: 12px;
@@ -143,6 +145,13 @@ a:hover {
   box-shadow: 0px 1vw 3vw -1vw rgba(2,12,27,0.7);
 }
 
+
+.nav-link {
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 .navbar-links {
   display: flex;
   gap: 2rem;
@@ -230,8 +239,14 @@ a:hover {
 .object-cover {
   object-fit: cover;
 }
-
-@media (max-width: 768px) {
+@media (min-width: 640px) {
+  .grid-cols-2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+@media (max-width: 639px) {
   .member-grid {
     grid-template-columns: 1fr; /* Single column on small screens */
   }

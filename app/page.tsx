@@ -7,17 +7,17 @@ export default function Home() {
     <div className="flex flex-col items-center text-white py-20 px-4">
       {/* Hero Section */}
       <section className="hero-section text-center w-full max-w-4xl">
-        <h1 className="text-3xl sm:text-4xl font-bold uppercase text-orange-500">
+        <h1 className="text-2xl sm:text-3xl font-bold uppercase text-orange-500">
           Princeton Quantitative Traders
         </h1>
-        <h2 className="text-md sm:text-xl text-gold mt-4">
+        <h2 className="text-sm sm:text-lg text-gold mt-4">
           Algorithmic Excellence. Mathematical Precision.
         </h2>
       </section>
 
       {/* Mission Statement */}
       <section className="home-content flex justify-center w-full mt-12">
-        <div className="content-box w-full max-w-4xl p-8 rounded-xl shadow-lg bg-black bg-opacity-90">
+        <div className="content-box w-full max-w-4xl p-8 rounded-xl shadow-lg bg-gradient-to-b from-black to-orange-700">
           <div className="flex justify-center">
             <Image src="/PQT-Logo1.png" alt="PQT Logo" width={150} height={150} priority />
           </div>
@@ -41,7 +41,7 @@ export default function Home() {
       {/* Meet Our Team Section */}
       <section className="home-content flex justify-center w-full mt-12">
         <div className="content-box w-full max-w-4xl bg-gradient-to-b from-black to-orange-700 p-8 rounded-xl shadow-lg">
-          <h2 className="text-3xl font-bold text-orange-500 text-center">Meet Our Team</h2>
+          <h2 className="text-2xl font-bold text-orange-500 text-center">Meet Our Team</h2>
 
           {/* Team Members Grid - Fixed to ensure two-column layout */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
@@ -62,7 +62,7 @@ export default function Home() {
       {/* Photo Gallery Section */}
       <section className="home-content flex justify-center w-full mt-12">
         <div className="content-box w-full max-w-4xl bg-gradient-to-b from-black to-orange-700 p-8 rounded-xl shadow-lg">
-          <h2 className="text-3xl font-bold text-orange-500 text-center">Photo Gallery</h2>
+          <h2 className="text-2xl font-bold text-orange-500 text-center">Photo Gallery</h2>
           <Gallery />
         </div>
       </section>
