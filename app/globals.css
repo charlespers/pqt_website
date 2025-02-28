@@ -9,6 +9,35 @@ html, body {
   position: relative;
   z-index: 1;
 }
+
+/* Center the main content */
+.centered-container {
+  max-width: 800px; /* Limit width so fractal is visible on sides */
+  margin: 0 auto; /* Center it */
+  padding: 50px 20px; /* Space around it */
+  text-align: left; /* Keep text aligned left */
+}
+
+/* Text box styling */
+.content-box {
+  background: rgba(0, 0, 0, 0.85); /* Dark background but slightly transparent */
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 165, 0, 0.5); /* Orange glow effect */
+  width: 100%; /* Make sure content doesn't overflow */
+}
+
+.content-container {
+  max-width: 800px; /* Restricts width so fractal remains visible */
+  width: 100%;
+  background: rgba(0, 0, 0, 0.85); /* Semi-transparent black background */
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 165, 0, 0.5); /* Orange glow effect */
+  text-align: left; /* Ensures text is aligned left inside box */
+}
+
 /* HEADERS & TEXT */
 h1 {
   font-size: 4rem;
@@ -116,5 +145,16 @@ a:hover {
   z-index: -1; /* Keeps it behind everything */
   opacity: 0.4; /* Adjust this to make it more or less visible */
   pointer-events: none; /* Ensures buttons and links can be clicked */
+}
+
+.math-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10; /* Pushes it behind everything */
+  opacity: 0.4; /* Adjust opacity for readability */
+  pointer-events: none; /* Allows clicking on buttons/links */
 }
 

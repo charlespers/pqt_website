@@ -13,7 +13,7 @@ const FractalBackground = () => {
     if (!ctx) return;
 
     const width = window.innerWidth;
-    const height = window.innerHeight;
+    const height = document.body.scrollHeight; // Match total page height
     canvas.width = width;
     canvas.height = height;
 
@@ -42,7 +42,7 @@ const FractalBackground = () => {
           data[index] = (color * 0.7) % 255;
           data[index + 1] = (color * 0.5) % 255;
           data[index + 2] = (color * 0.3) % 255;
-          data[index + 3] = 255 * 0.4; // Apply transparency (opacity)
+          data[index + 3] = 255 * 0.4; // Apply transparency
         }
       }
       ctx.putImageData(imageData, 0, 0);

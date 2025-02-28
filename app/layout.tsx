@@ -13,8 +13,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <FractalBackground />
         <Navbar />
 
-        <main className="min-h-screen flex flex-col justify-center items-center">
-          <div className="max-w-4xl w-full">{children}</div>
+        {/* Center content in a limited width so fractal is visible on sides */}
+        <main className="flex flex-col items-center min-h-screen px-4">
+          <div className="content-container">{children}</div>
         </main>
 
         <Footer />
