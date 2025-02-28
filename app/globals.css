@@ -259,3 +259,18 @@ a:hover {
   gap: 24px;
   justify-content: start;
 }
+
+.what-we-do {
+  text-align: left !important;  /* Forces left alignment */
+  padding-left: 1rem;
+  max-width: 90%;
+  margin: auto;
+}
+
+hr {
+  border: 0;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #ff8f1f, transparent);
+  width: 80%;
+  margin: 20px auto;
+}

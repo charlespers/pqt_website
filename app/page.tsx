@@ -16,24 +16,27 @@ export default function Home() {
 
       {/* Mission Statement */}
       <section className="home-content flex justify-center w-full mt-12">
-        <div className="content-box w-full max-w-4xl p-8 rounded-xl shadow-lg text-left bg-black bg-opacity-90">
+        <div className="content-box w-full max-w-4xl p-8 rounded-xl shadow-lg bg-black bg-opacity-90 text-left">
           {/* Logo Centered */}
           <div className="flex justify-center">
             <Image src="/PQT-Logo1.png" alt="PQT Logo" width={200} height={200} priority />
           </div>
 
           {/* Welcome Message */}
-          <p className="text-lg mt-4 text-left">
+          <p className="text-lg mt-4">
             Welcome to <strong>Princeton Quantitative Traders</strong>, a student-led quantitative trading club 
             dedicated to exploring data-driven financial markets and algorithmic trading. Our mission is to equip 
             members with the skills and knowledge needed to develop, test, and deploy quantitative trading strategies.
           </p>
 
+          {/* Break Line */}
+          <hr className="border-t-2 border-orange-500 my-6" />
+
           {/* What We Do Section - Left-Aligned */}
           <h3 className="text-2xl font-bold text-orange-500 mt-6 border-l-4 border-orange-500 pl-4">
             What We Do
           </h3>
-          <div className="pl-4">
+          <div className="what-we-do">
             <p className="text-lg mt-4">
               <strong>Strategy Research</strong> – We research and build algorithmic trading strategies using statistical models, 
               machine learning, and financial data analysis.
