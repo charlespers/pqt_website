@@ -8,7 +8,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <Navbar />
-        <div className="math-background"></div> {children}
+        <div className="math-background"></div> {/* 🔥 Animated math equations */}
         <main className="min-h-screen flex flex-col justify-center items-center">
           {children}
         </main>
