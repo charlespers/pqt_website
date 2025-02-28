@@ -50,7 +50,7 @@ export default function Home() {
               { name: "Vice President", image: "/members/charles_headshot.jpg" },
               { name: "Treasurer", image: "/members/rodrigo_headshot.jpg" },
               { name: "Officer 1", image: "/members/loc_headshot.jpg" },
-              { name: "Officer 3", image: "/members/tom_headshot.jpeg" },
+              { name: "Officer 3", image: "/members/tom_headshot.jpg" },
               { name: "Officer 2", image: "/members/jaime_headshot.jpg" }
             ].map((member, index) => (
               <div key={index} className="flex flex-col items-center w-40">
