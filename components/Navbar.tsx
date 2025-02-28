@@ -15,7 +15,7 @@ export default function Navbar() {
         </Link>
 
         {/* Navbar Title (Now Smaller) */}
-        <h1 className="text-sm sm:text-md font-bold text-orange-500">
+        <h1 className="text-sm sm:text-sm font-bold text-orange-500">
           Princeton Quantitative Traders
         </h1>
 
