@@ -43,7 +43,7 @@ export default function Home() {
         <div className="content-box w-8/12 max-w-5xl bg-gradient-to-b from-black to-orange-700 p-8 rounded-xl shadow-lg">
           <h2 className="text-3xl font-bold text-orange-500 text-center">Meet Our Team</h2>
 
-          {/* Grid layout for team members */}
+          {/* Responsive Grid Layout for Team Members */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6 place-items-center">
             {[
               { name: "President", image: "/members/jerry_headshot.jpg" },
@@ -54,13 +54,13 @@ export default function Home() {
               { name: "Event Officer", image: "/members/andrew_headshot.png" }
             ].map((member, index) => (
               <div key={index} className="flex flex-col items-center">
+                {/* Circular Image with Multi-Layered Borders */}
                 <div className="relative w-36 h-36 flex items-center justify-center">
-                  {/* Three-layered circular border effect */}
                   <div className="absolute inset-0 rounded-full border-4 border-white"></div>
                   <div className="absolute inset-1 rounded-full border-4 border-gold"></div>
                   <div className="absolute inset-2 rounded-full border-4 border-orange-500"></div>
 
-                  {/* Image inside the layered borders */}
+                  {/* Image inside circular border */}
                   <div className="w-32 h-32 overflow-hidden rounded-full">
                     <Image 
                       src={member.image} 
@@ -71,6 +71,8 @@ export default function Home() {
                     />
                   </div>
                 </div>
+
+                {/* Name Below the Image */}
                 <p className="text-center mt-2 font-semibold">{member.name}</p>
               </div>
             ))}
