@@ -194,3 +194,23 @@ a:hover {
   pointer-events: none; /* Prevents it from blocking clicks */
 }
 
+
+
+
+/* PHOTOS BORDER MEMBERS */
+/* Ensures circular cutouts for images */
+.rounded-full {
+  border-radius: 50%;
+}
+.border-black {
+  border-color: black;
+}
+.border-gold {
+  border-color: gold;
+}
+.border-white {
+  border-color: white;
+}
+.object-cover {
+  object-fit: cover;
+}
