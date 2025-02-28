@@ -1,7 +1,7 @@
-"use client"; // Add this at the top
-
+"use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -10,7 +10,7 @@ export default function Navbar() {
     <nav className="navbar-container">
       <div className="logo">
         <Link href="/">
-          <img src="/PQT-Logo1.png" alt="PQT Logo" />
+          <Image src="/PQT-Logo1.png" alt="PQT Logo" width={60} height={60} />
         </Link>
       </div>
       <div className="navbar-links">
