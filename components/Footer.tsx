@@ -1,11 +1,10 @@
 "use client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+
 export default function Footer() {
-  const pathname = usePathname();
-    return (
-      <footer className="bg-gray-800 p-4 text-center mt-10">
-        <p>&copy; {new Date().getFullYear()} Princeton QT. All Rights Reserved.</p>
-      </footer>
-    );
-  }
+  return (
+    <footer className="bg-gray-800 p-4 text-center mt-10">
+      <p>&copy; {new Date().getFullYear()} Princeton QT. All Rights Reserved.</p>
+    </footer>
+  );
+}
