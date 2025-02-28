@@ -34,7 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               {/* Princeton Tiger Image */}
               <div className="tiger-container">
                 <Image 
-                  src="/princeton-tiger.png" 
+                  src="/princeton-tiger.jpg" 
                   alt="Princeton Tiger" 
                   width={200} 
                   height={200} 

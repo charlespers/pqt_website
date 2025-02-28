@@ -28,7 +28,7 @@ export default function Home() {
           </p>
           <div className="flex justify-center mt-4">
             <Image 
-              src="/princeton-tiger.png" 
+              src="/princeton-tiger.jpg" 
               alt="Princeton Tiger" 
               width={150} 
               height={150} 
@@ -44,8 +44,8 @@ export default function Home() {
         <div className="content-box w-8/12 max-w-5xl bg-gradient-to-b from-black to-orange-700 p-8 rounded-xl shadow-lg">
           <h2 className="text-3xl font-bold text-orange-500 text-center">Meet Our Team</h2>
 
-          {/* Two-Column Responsive Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6 place-items-center">
+          {/* 🔹 Two-Column Grid for Headshots & Names */}
+          <div className="member-grid mt-6">
             {[
               { name: "President", image: "/members/jerry_headshot.jpg" },
               { name: "Vice President | Project Management | Competitions", image: "/members/charles_headshot.jpeg" },
