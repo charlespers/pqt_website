@@ -46,12 +46,12 @@ export default function Home() {
           {/* Row-based image layout */}
           <div className="flex flex-wrap justify-center gap-8 mt-6">
             {[
-              { name: "President", image: "/members/president.png" },
-              { name: "Vice President", image: "/members/vice-president.png" },
-              { name: "Treasurer", image: "/members/treasurer.png" },
-              { name: "Officer", image: "/members/officer.png" },
-              { name: "Member 1", image: "/members/member1.png" },
-              { name: "Member 2", image: "/members/member2.png" }
+              { name: "President", image: "/members/jerry_headshot.jpg" },
+              { name: "Vice President", image: "/members/charles_headshot.jpg" },
+              { name: "Treasurer", image: "/members/rodrigo_headshot.jpg" },
+              { name: "Officer 1", image: "/members/loc_headshot.jpg" },
+              { name: "Officer 3", image: "/members/tom_headshot.jpeg" },
+              { name: "Officer 2", image: "/members/jaime_headshot.jpg" }
             ].map((member, index) => (
               <div key={index} className="flex flex-col items-center w-40">
                 <div className="w-32 h-32 overflow-hidden rounded-full border-4 border-orange-500">
