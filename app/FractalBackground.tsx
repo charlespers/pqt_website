@@ -21,6 +21,7 @@ const FractalBackground = () => {
     canvas.width = width;
     canvas.height = height;
 
+    // Define render function inside useEffect
     const renderFractal = () => {
       const maxIterations = 300;
       const scale = zoomRef.current;
@@ -55,48 +56,42 @@ const FractalBackground = () => {
 
     renderFractal();
 
+    const handleZoom = (event: WheelEvent) => {
+      event.preventDefault();
+      zoomRef.current = Math.max(1, zoomRef.current + event.deltaY * -0.005);
+      requestAnimationFrame(renderFractal);
+    };
+
+    const handleMouseDown = () => {
+      isDragging.current = true;
+    };
+
+    const handleMouseUp = () => {
+      isDragging.current = false;
+    };
+
+    const handleMouseMove = (event: MouseEvent) => {
+      if (!isDragging.current) return;
+      centerXRef.current += event.movementX * 0.002;
+      centerYRef.current += event.movementY * 0.002;
+      requestAnimationFrame(renderFractal);
+    };
+
+    window.addEventListener("wheel", handleZoom);
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mousedown", handleMouseDown);
+    window.addEventListener("mouseup", handleMouseUp);
+
     return () => {
-      ctx.clearRect(0, 0, width, height);
+      window.removeEventListener("wheel", handleZoom);
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mousedown", handleMouseDown);
+      window.removeEventListener("mouseup", handleMouseUp);
     };
   }, []);
 
-  const handleZoom = (event: WheelEvent) => {
-    event.preventDefault();
-    zoomRef.current = Math.max(1, zoomRef.current + event.deltaY * -0.005);
-    requestAnimationFrame(() => {
-      const canvas = canvasRef.current;
-      if (canvas) canvas.getContext("2d")?.clearRect(0, 0, canvas.width, canvas.height);
-      renderFractal();
-    });
-  };
-
-  const handleMouseDown = () => {
-    isDragging.current = true;
-  };
-
-  const handleMouseUp = () => {
-    isDragging.current = false;
-  };
-
-  const handleMouseMove = (event: React.MouseEvent<HTMLCanvasElement>) => {
-    if (!isDragging.current) return;
-    centerXRef.current += event.movementX * 0.002;
-    centerYRef.current += event.movementY * 0.002;
-    requestAnimationFrame(() => {
-      const canvas = canvasRef.current;
-      if (canvas) canvas.getContext("2d")?.clearRect(0, 0, canvas.width, canvas.height);
-      renderFractal();
-    });
-  };
-
   return (
-    <canvas
-      ref={canvasRef}
-      className="math-background"
-      onMouseDown={handleMouseDown}
-      onMouseUp={handleMouseUp}
-      onMouseMove={handleMouseMove}
-    />
+    <canvas ref={canvasRef} className="math-background" />
   );
 };
 
