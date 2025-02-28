@@ -5,26 +5,24 @@ import { useEffect, useRef, useState } from "react";
 const FractalBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [zoom, setZoom] = useState(1);
+  const [centerX, setCenterX] = useState(0); // Center of the fractal in X direction
+  const [centerY, setCenterY] = useState(0); // Center of the fractal in Y direction
   const [canvasDimensions, setCanvasDimensions] = useState({
     width: 0,
     height: 0,
   });
-  const [offsetX, setOffsetX] = useState(0); // Offset for keeping the fractal centered on scroll
-  const [offsetY, setOffsetY] = useState(0);
 
   // Throttle scroll events to avoid excessive zoom updates
   const [isScrolling, setIsScrolling] = useState(false);
   const throttleScroll = (event: WheelEvent) => {
-    if (isScrolling) return; // Prevent rapid zoom updates
+    if (isScrolling) return;
 
     setIsScrolling(true);
-
-    // Update zoom based on scroll direction
     const newZoom = Math.max(1, zoom + event.deltaY * -0.005);
     setZoom(newZoom);
 
-    // Delay state update to allow for smooth scrolling
-    setTimeout(() => setIsScrolling(false), 100); // Adjust this delay for smoother scrolling
+    // Delay state update to allow for smoother zoom behavior
+    setTimeout(() => setIsScrolling(false), 100);
   };
 
   // Update canvas size on window resize
@@ -58,48 +56,51 @@ const FractalBackground = () => {
     }
   }, []);
 
-  // Spiraling fractal render function (based on a modified Julia set or spiral fractal)
-  const renderSpiralFractal = (ctx: CanvasRenderingContext2D, width: number, height: number, zoom: number, offsetX: number, offsetY: number) => {
-    const maxIterations = 500; // Lowered iterations to improve performance
+  // Julia Set fractal render function (colorful, rainbow gradient)
+  const renderJuliaSet = (
+    ctx: CanvasRenderingContext2D,
+    width: number,
+    height: number,
+    zoom: number,
+    centerX: number,
+    centerY: number
+  ) => {
+    const maxIterations = 500;
     const scale = zoom;
-    const centerX = 0; // Keep it centered
-    const centerY = 0;
+    const cRe = -0.7; // Real part of the constant for Julia set
+    const cIm = 0.27015; // Imaginary part of the constant for Julia set
 
     const imageData = ctx.createImageData(width, height);
     const data = imageData.data;
 
     for (let x = 0; x < width; x++) {
       for (let y = 0; y < height; y++) {
-        // Calculate coordinates based on the center and zoom
-        const real = (x - width / 2 + offsetX) / (0.5 * scale * width) + centerX;
-        const imaginary = (y - height / 2 + offsetY) / (0.5 * scale * height) + centerY;
+        const real = (x - width / 2 + centerX) / (0.5 * scale * width);
+        const imaginary = (y - height / 2 + centerY) / (0.5 * scale * height);
 
-        let cReal = real;
-        let cImaginary = imaginary;
+        let zr = real;
+        let zi = imaginary;
         let iteration = 0;
 
-        // Fractal iteration based on a spiral-like formula (Julia set or similar)
-        while (iteration < maxIterations) {
-          const real2 = cReal * cReal - cImaginary * cImaginary + real;
-          const imaginary2 = 2 * cReal * cImaginary + imaginary;
-
-          cReal = real2;
-          cImaginary = imaginary2;
-
-          if (cReal * cReal + cImaginary * cImaginary > 4) {
-            break;
-          }
-
+        // Julia set iteration
+        while (zr * zr + zi * zi <= 4 && iteration < maxIterations) {
+          const temp = zr * zr - zi * zi + cRe;
+          zi = 2 * zr * zi + cIm;
+          zr = temp;
           iteration++;
         }
 
+        // Color based on iteration count (Rainbow)
         const color = iteration === maxIterations ? 0 : Math.floor(255 * (iteration / maxIterations));
+        const r = Math.floor((color * 0.7) % 255);
+        const g = Math.floor((color * 0.5) % 255);
+        const b = Math.floor((color * 0.3) % 255);
 
         const index = (x + y * width) * 4;
-        data[index] = color; // Red
-        data[index + 1] = color; // Green
-        data[index + 2] = color; // Blue
-        data[index + 3] = 255;  // Alpha (fully opaque for the fractal)
+        data[index] = r;   // Red
+        data[index + 1] = g; // Green
+        data[index + 2] = b; // Blue
+        data[index + 3] = 255;  // Alpha (fully opaque)
       }
     }
 
@@ -114,9 +115,8 @@ const FractalBackground = () => {
 
       const render = () => {
         if (ctx) {
-          // Clear the canvas before rendering to ensure transparency
-          ctx.clearRect(0, 0, width, height); // This will clear the canvas and leave it transparent
-          renderSpiralFractal(ctx, width, height, zoom, offsetX, offsetY);
+          ctx.clearRect(0, 0, width, height); // Clear previous frame
+          renderJuliaSet(ctx, width, height, zoom, centerX, centerY);
         }
       };
 
@@ -127,20 +127,19 @@ const FractalBackground = () => {
 
       return () => cancelAnimationFrame(animationId);
     }
-  }, [zoom, offsetX, offsetY, canvasDimensions]);
+  }, [zoom, centerX, centerY, canvasDimensions]);
 
-  // Function to keep the fractal centered
-  const handleScroll = (event: WheelEvent) => {
-    const newZoom = Math.max(1, zoom + event.deltaY * -0.005);
-    setZoom(newZoom);
-
-    // Adjust the offset to ensure the fractal remains centered
-    setOffsetX((prev) => prev + event.deltaX * 0.2);  // Optional: fine-tune the X offset to keep the fractal centered
-    setOffsetY((prev) => prev + event.deltaY * 0.2);  // Optional: fine-tune the Y offset
+  // Handle mouse drag to move the fractal center
+  const handleMouseMove = (event: MouseEvent) => {
+    if (event.buttons === 1) { // Check if left mouse button is pressed
+      setCenterX(centerX + event.movementX * 0.002); // Pan in the X direction
+      setCenterY(centerY + event.movementY * 0.002); // Pan in the Y direction
+    }
   };
 
+  // Make sure we render only after canvas dimensions are set
   if (!canvasDimensions.width || !canvasDimensions.height) {
-    return null; // Prevent rendering before dimensions are set
+    return null;
   }
 
   return (
@@ -151,10 +150,15 @@ const FractalBackground = () => {
         left: 0,
         width: '100%',
         height: '100%',
-        pointerEvents: 'none', // Prevent the canvas from blocking interactions
+        pointerEvents: 'none', // Make sure the fractal does not block any interactions
       }}
     >
-      <canvas ref={canvasRef} width={canvasDimensions.width} height={canvasDimensions.height}></canvas>
+      <canvas
+        ref={canvasRef}
+        width={canvasDimensions.width}
+        height={canvasDimensions.height}
+        onMouseMove={handleMouseMove} // Enable panning with mouse drag
+      ></canvas>
     </div>
   );
 };
