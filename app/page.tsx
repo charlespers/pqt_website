@@ -21,7 +21,7 @@ export default function Home() {
               priority
             />
           </div>
-          <p className="text-lg mt-4">
+          <p className="text-lg mt-4 text-left">
             Our mission is to bridge the gap between Princeton students and quantitative finance 
             through education, research, and competitions.
           </p>
@@ -42,8 +42,9 @@ export default function Home() {
       <section className="home-content">
         <div className="content-box">
           <h2 className="text-3xl font-bold text-orange-500 text-center">Meet Our Team</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-6">
-            {/* Team Members */}
+          
+          {/* Row-based image layout */}
+          <div className="flex flex-wrap justify-center gap-8 mt-6">
             {[
               { name: "President", image: "/members/president.png" },
               { name: "Vice President", image: "/members/vice-president.png" },
@@ -52,7 +53,7 @@ export default function Home() {
               { name: "Member 1", image: "/members/member1.png" },
               { name: "Member 2", image: "/members/member2.png" }
             ].map((member, index) => (
-              <div key={index} className="team-member flex flex-col items-center">
+              <div key={index} className="flex flex-col items-center w-40">
                 <div className="w-32 h-32 overflow-hidden rounded-full border-4 border-orange-500">
                   <Image 
                     src={member.image} 
