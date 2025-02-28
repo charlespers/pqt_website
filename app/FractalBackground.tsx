@@ -1,4 +1,4 @@
-"use client"; // Add this line at the top
+"use client"; // This marks this component as a client component
 
 import { useEffect, useRef, useState } from "react";
 
@@ -6,23 +6,36 @@ const FractalBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [zoom, setZoom] = useState(1);
   const [canvasDimensions, setCanvasDimensions] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
+    width: 0, // Initial width as 0 to prevent rendering on the server
+    height: 0, // Initial height as 0 to prevent rendering on the server
   });
 
   // Update canvas size on window resize
   const handleResize = () => {
-    setCanvasDimensions({
-      width: window.innerWidth,
-      height: window.innerHeight,
-    });
+    if (typeof window !== "undefined") {
+      setCanvasDimensions({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
   };
 
   useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    // Set initial canvas dimensions after component mounts (client-side)
+    if (typeof window !== "undefined") {
+      setCanvasDimensions({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+
+      // Add resize event listener
+      window.addEventListener("resize", handleResize);
+
+      return () => {
+        // Clean up event listener on unmount
+        window.removeEventListener("resize", handleResize);
+      };
+    }
   }, []);
 
   // Mandelbrot render function
@@ -39,7 +52,7 @@ const FractalBackground = () => {
       for (let y = 0; y < height; y++) {
         const real = (x - width / 2) / (0.5 * scale * width) + centerX;
         const imaginary = (y - height / 2) / (0.5 * scale * height) + centerY;
-        
+
         let cReal = real;
         let cImaginary = imaginary;
         let iteration = 0;
@@ -47,7 +60,7 @@ const FractalBackground = () => {
         while (iteration < maxIterations) {
           const real2 = cReal * cReal - cImaginary * cImaginary + real;
           const imaginary2 = 2 * cReal * cImaginary + imaginary;
-          
+
           cReal = real2;
           cImaginary = imaginary2;
 
@@ -79,7 +92,7 @@ const FractalBackground = () => {
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (canvas) {
+    if (canvas && canvasDimensions.width && canvasDimensions.height) {
       const ctx = canvas.getContext("2d");
       const { width, height } = canvasDimensions;
 
@@ -99,6 +112,10 @@ const FractalBackground = () => {
       };
     }
   }, [zoom, canvasDimensions]);
+
+  if (!canvasDimensions.width || !canvasDimensions.height) {
+    return null; // Prevent rendering before dimensions are set
+  }
 
   return (
     <div className="absolute top-0 left-0 w-full h-full z-0">
