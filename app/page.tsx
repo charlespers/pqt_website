@@ -1,5 +1,5 @@
 import Image from "next/image";
-import MemberCard from "../components/MemberCard"; // Import the new component
+import MemberCard from "../components/MemberCard";
 
 export default function Home() {
   return (
