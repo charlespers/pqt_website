@@ -30,12 +30,17 @@ html, body {
   padding: 50px 0;
 }
 
-/* Text box styling */
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 /* Adjust width of the main content box */
 .content-box {
-  width: 80%; /* Now from 1/9 to 8/9 */
-  max-width: 1100px; /* Still ensures it's not too wide */
-  background: rgba(0, 0, 0, 0.85); /* Keeps the dark semi-transparent background */
+  width: 80%; /* Ensures it's in the 1/9 - 8/9 width range */
+  max-width: 1100px;
+  background: rgba(0, 0, 0, 0.85); /* Semi-transparent black */
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(255, 165, 0, 0.5); /* Orange glow */
@@ -43,18 +48,27 @@ html, body {
   margin-bottom: 50px;
 }
 
+
 /* Center images inside content-box */
+/* Ensure images inside content box are centered */
 .content-box img {
   display: block;
-  margin: 0 auto; /* Centers the image horizontally */
+  margin: 0 auto;
 }
 
-/* Ensure the Princeton Tiger image displays correctly */
+/* Make the Princeton Tiger image stand out */
+.tiger-container {
+  position: relative;
+  text-align: center;
+  margin-top: -30px; /* Moves it slightly over the text box */
+}
+
 .princeton-tiger {
-  background: none !important; /* Remove any background */
-  mix-blend-mode: multiply; /* Helps preserve transparency */
+  background: none !important;
+  mix-blend-mode: normal; /* Removes blending */
   display: block;
-  margin: 0 auto; /* Center the image */
+  margin: 0 auto;
+  filter: drop-shadow(0px 0px 10px rgba(255, 165, 0, 0.8)); /* Glowing effect */
 }
 
 .content-container {
