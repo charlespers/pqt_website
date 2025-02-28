@@ -16,7 +16,8 @@
       "react-latex": "latest",
       "react-chartjs-2": "latest",
       "chart.js": "latest",
-      "prop-types": "latest"
+      "prop-types": "latest",
+      "aos": "latest"
     },
     "devDependencies": {
       "typescript": "latest",

@@ -15,9 +15,9 @@ export default function Navbar() {
         </Link>
 
         {/* Title (Centered) */}
-        <h1 className="flex-grow text-center text-sm sm:text-sm font-bold text-orange-500">
+        <p className="flex-grow text-center text-sm sm:text-sm font-bold text-orange-500">
           Princeton Quantitative Traders
-        </h1>
+        </p>
 
         {/* Navigation Links (Right) */}
         <div className="navbar-links flex space-x-8">
