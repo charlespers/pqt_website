@@ -20,30 +20,31 @@ export default function Home() {
           <div className="flex justify-center">
             <Image src="/PQT-Logo1.png" alt="PQT Logo" width={200} height={200} priority />
           </div>
-          <p className="text-lg mt-4 text-center">
+          <p className="text-lg mt-4 text-left">
           Welcome to  Princeton Quantitative Traders, a student-led quantitative trading club dedicated to exploring data-driven financial markets and algorithmic trading. Our mission is to equip members with the skills and knowledge needed to develop, test, and deploy quantitative trading strategies.
           </p>
-          <h1>
+          <h3>
           What We Do
-          </h1>
-          <p>
-          Strategy Research – We research and build algorithmic trading strategies using statistical models, machine learning, and financial data analysis.
+          </h3>
+          <p className="text-lg mt-4 text-left">
+            <strong>Strategy Research</strong> – We research and build algorithmic trading strategies using statistical models, machine learning, and financial data analysis.
           </p>
-          <p>
-          Technical Workshops – We offer hands-on training in Python, backtesting frameworks, and trading infrastructure to prepare members for real-world applications.
+          <p className="text-lg mt-2 text-left">
+            <strong>Technical Workshops</strong> – We offer hands-on training in Python, backtesting frameworks, and trading infrastructure to prepare members for real-world applications.
           </p>
-          <p>
-          Trading Competitions – Members participate in simulated and live trading competitions to test strategies in dynamic market conditions.
+          <p className="text-lg mt-2 text-left">
+            <strong>Trading Competitions</strong> – Members participate in simulated and live trading competitions to test strategies in dynamic market conditions.
           </p>
-          <p>
-          Industry & Career Development – We connect members with professionals, host guest speakers, and provide resources for careers in quantitative finance.
+          <p className="text-lg mt-2 text-left">
+            <strong>Industry & Career Development</strong> – We connect members with professionals, host guest speakers, and provide resources for careers in quantitative finance.
           </p>
-          <p>
-          Collaborations & Professionalism – We work with other trading clubs and research groups to explore cutting-edge developments in quantitative finance.
+          <p className="text-lg mt-2 text-left">
+            <strong>Collaborations & Professionalism</strong> – We work with other trading clubs and research groups to explore cutting-edge developments in quantitative finance.
           </p>
-          <p>
-          Join us today!
+          <p className="text-lg mt-4 text-left font-bold">
+            Join us today!
           </p>
+
           <div className="flex justify-center mt-4">
             <Image
               src="/princeton-tiger.jpg"
