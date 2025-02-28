@@ -95,7 +95,7 @@ const FractalBackground = () => {
         data[index] = color; // Red
         data[index + 1] = color; // Green
         data[index + 2] = color; // Blue
-        data[index + 3] = 255;  // Alpha
+        data[index + 3] = 255;  // Alpha (fully opaque for the fractal)
       }
     }
 
@@ -110,6 +110,8 @@ const FractalBackground = () => {
 
       const render = () => {
         if (ctx) {
+          // Clear the canvas before rendering to ensure transparency
+          ctx.clearRect(0, 0, width, height); // This will clear the canvas and leave it transparent
           renderMandelbrot(ctx, width, height, zoom);
         }
       };
