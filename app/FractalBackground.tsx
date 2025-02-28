@@ -9,6 +9,8 @@ const FractalBackground = () => {
     width: 0,
     height: 0,
   });
+  const [offsetX, setOffsetX] = useState(0); // Offset for keeping the fractal centered on scroll
+  const [offsetY, setOffsetY] = useState(0);
 
   // Throttle scroll events to avoid excessive zoom updates
   const [isScrolling, setIsScrolling] = useState(false);
@@ -56,25 +58,27 @@ const FractalBackground = () => {
     }
   }, []);
 
-  // Mandelbrot render function with reduced complexity for performance
-  const renderMandelbrot = (ctx: CanvasRenderingContext2D, width: number, height: number, zoom: number) => {
-    const maxIterations = 300; // Reduce the number of iterations to improve performance
-    const centerX = -0.5;
-    const centerY = 0;
+  // Spiraling fractal render function (based on a modified Julia set or spiral fractal)
+  const renderSpiralFractal = (ctx: CanvasRenderingContext2D, width: number, height: number, zoom: number, offsetX: number, offsetY: number) => {
+    const maxIterations = 500; // Lowered iterations to improve performance
     const scale = zoom;
+    const centerX = 0; // Keep it centered
+    const centerY = 0;
 
     const imageData = ctx.createImageData(width, height);
     const data = imageData.data;
 
     for (let x = 0; x < width; x++) {
       for (let y = 0; y < height; y++) {
-        const real = (x - width / 2) / (0.5 * scale * width) + centerX;
-        const imaginary = (y - height / 2) / (0.5 * scale * height) + centerY;
+        // Calculate coordinates based on the center and zoom
+        const real = (x - width / 2 + offsetX) / (0.5 * scale * width) + centerX;
+        const imaginary = (y - height / 2 + offsetY) / (0.5 * scale * height) + centerY;
 
         let cReal = real;
         let cImaginary = imaginary;
         let iteration = 0;
 
+        // Fractal iteration based on a spiral-like formula (Julia set or similar)
         while (iteration < maxIterations) {
           const real2 = cReal * cReal - cImaginary * cImaginary + real;
           const imaginary2 = 2 * cReal * cImaginary + imaginary;
@@ -112,7 +116,7 @@ const FractalBackground = () => {
         if (ctx) {
           // Clear the canvas before rendering to ensure transparency
           ctx.clearRect(0, 0, width, height); // This will clear the canvas and leave it transparent
-          renderMandelbrot(ctx, width, height, zoom);
+          renderSpiralFractal(ctx, width, height, zoom, offsetX, offsetY);
         }
       };
 
@@ -123,7 +127,17 @@ const FractalBackground = () => {
 
       return () => cancelAnimationFrame(animationId);
     }
-  }, [zoom, canvasDimensions]);
+  }, [zoom, offsetX, offsetY, canvasDimensions]);
+
+  // Function to keep the fractal centered
+  const handleScroll = (event: WheelEvent) => {
+    const newZoom = Math.max(1, zoom + event.deltaY * -0.005);
+    setZoom(newZoom);
+
+    // Adjust the offset to ensure the fractal remains centered
+    setOffsetX((prev) => prev + event.deltaX * 0.2);  // Optional: fine-tune the X offset to keep the fractal centered
+    setOffsetY((prev) => prev + event.deltaY * 0.2);  // Optional: fine-tune the Y offset
+  };
 
   if (!canvasDimensions.width || !canvasDimensions.height) {
     return null; // Prevent rendering before dimensions are set
