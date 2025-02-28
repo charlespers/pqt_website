@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useRef } from "react";
 
 const FractalBackground = () => {
@@ -13,7 +12,7 @@ const FractalBackground = () => {
     if (!ctx) return;
 
     const width = window.innerWidth;
-    const height = document.body.scrollHeight; // Match total page height
+    const height = window.innerHeight;
     canvas.width = width;
     canvas.height = height;
 
@@ -42,7 +41,7 @@ const FractalBackground = () => {
           data[index] = (color * 0.7) % 255;
           data[index + 1] = (color * 0.5) % 255;
           data[index + 2] = (color * 0.3) % 255;
-          data[index + 3] = 255 * 0.4; // Apply transparency
+          data[index + 3] = 255;
         }
       }
       ctx.putImageData(imageData, 0, 0);
@@ -51,12 +50,7 @@ const FractalBackground = () => {
     renderFractal();
   }, []);
 
-  return (
-    <canvas 
-      ref={canvasRef} 
-      className="fixed top-0 left-0 w-full h-full -z-10 opacity-40 pointer-events-none"
-    />
-  );
+  return <canvas ref={canvasRef} className="math-background" />;
 };
 
 export default FractalBackground;
