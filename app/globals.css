@@ -40,7 +40,6 @@ html, body {
 /* Adjust width of the main content box */
 .content-box {
   width: 80%; /* Ensures it fits in the 1/9 - 8/9 range */
-  max-width: 1100px;
   background: rgba(0, 0, 0, 0.85); /* Keeps the background semi-transparent */
   padding: 40px;
   border-radius: 12px;
@@ -58,7 +57,6 @@ html, body {
 
 .page-content {
   width: 80%; /* Keeps it in the 1/9 - 8/9 range */
-  max-width: 1100px;
   text-align: left;
 }
 
