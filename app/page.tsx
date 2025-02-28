@@ -44,7 +44,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-orange-500 text-center">Meet Our Team</h2>
           
           {/* Row-based image layout */}
-          <div className="flex flex-wrap justify-center gap-8 mt-6">
+          <div className="flex flex-wrap gap-8 mt-6">
             {[
               { name: "President", 
                 image: "/members/jerry_headshot.jpg" },
