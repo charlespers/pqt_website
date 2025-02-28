@@ -20,28 +20,28 @@ export default function Home() {
           <div className="flex justify-center">
             <Image src="/PQT-Logo1.png" alt="PQT Logo" width={200} height={200} priority />
           </div>
-          <p className="text-lg mt-4 text-left">
+          <p className="text-lg mt-4 text-left !text-left">
           Welcome to  Princeton Quantitative Traders, a student-led quantitative trading club dedicated to exploring data-driven financial markets and algorithmic trading. Our mission is to equip members with the skills and knowledge needed to develop, test, and deploy quantitative trading strategies.
           </p>
           <h3>
           What We Do
           </h3>
-          <p className="text-lg mt-4 justify-left">
+          <p className="text-lg mt-4 text-left !text-left">
             <strong>Strategy Research</strong> – We research and build algorithmic trading strategies using statistical models, machine learning, and financial data analysis.
           </p>
-          <p className="text-lg mt-2 justify-left">
+          <p className="text-lg mt-2 text-left !text-left">
             <strong>Technical Workshops</strong> – We offer hands-on training in Python, backtesting frameworks, and trading infrastructure to prepare members for real-world applications.
           </p>
-          <p className="text-lg mt-2 justify-left">
+          <p className="text-lg mt-2 text-left !text-left">
             <strong>Trading Competitions</strong> – Members participate in simulated and live trading competitions to test strategies in dynamic market conditions.
           </p>
-          <p className="text-lg mt-2 justify-left">
+          <p className="text-lg mt-2 text-left !text-left">
             <strong>Industry & Career Development</strong> – We connect members with professionals, host guest speakers, and provide resources for careers in quantitative finance.
           </p>
-          <p className="text-lg mt-2 justify-left">
+          <p className="text-lg mt-2 text-left !text-left">
             <strong>Collaborations & Professionalism</strong> – We work with other trading clubs and research groups to explore cutting-edge developments in quantitative finance.
           </p>
-          <p className="text-lg mt-4 justify-left font-bold">
+          <p className="text-lg mt-4 text-left !text-left font-bold">
             Join us today!
           </p>
 
