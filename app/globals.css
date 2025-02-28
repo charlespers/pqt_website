@@ -98,3 +98,10 @@ nav {
   transition: transform 0.1s linear;
   color: #64ffda;
 }
+
+/* LOGO */
+.logo img {
+  height: 50px; /* Adjust as needed */
+  width: auto;
+  display: block;
+}
