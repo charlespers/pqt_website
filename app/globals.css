@@ -120,6 +120,15 @@ a:hover {
 }
 
 /* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: black;
+  z-index: 1000;
+}
+
 .navbar-container {
   background: black;
   display: flex;
@@ -237,3 +246,5 @@ a:hover {
   align-items: center;
   text-align: center;
 }
+
+

@@ -1,7 +1,7 @@
-"use client";
+"use client"; // Add this at the top
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -10,8 +10,11 @@ export default function Navbar() {
     <nav className="navbar-container">
       <div className="logo">
         <Link href="/">
-          <Image src="/PQT-Logo1.png" alt="PQT Logo" width={60} height={60} />
+          <img src="/PQT-Logo1.png" alt="PQT Logo" />
         </Link>
+      </div>
+      <div className="container mx-auto flex justify-center">
+        <h1 className="text-2xl font-bold text-orange-500">Princeton Quantitative Traders</h1>
       </div>
       <div className="navbar-links">
         <Link href="/" className={pathname === "/" ? "active" : ""}>Home</Link>
@@ -21,3 +24,5 @@ export default function Navbar() {
     </nav>
   );
 }
+
+
