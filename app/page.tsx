@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Gallery from "../components/Gallery";
+import MemberCard from "../components/MemberCard";
 
 export default function Home() {
   return (
@@ -14,9 +15,9 @@ export default function Home() {
         </h2>
       </section>
 
-      {/* Mission Statement Section */}
+      {/* Mission Statement */}
       <section className="home-content flex justify-center w-full mt-12">
-        <div className="content-box w-full max-w-4xl bg-gradient-to-b from-black to-orange-700 p-8 rounded-xl shadow-lg text-left">
+        <div className="content-box w-full max-w-4xl p-8 rounded-xl shadow-lg text-left bg-black bg-opacity-90">
           <div className="flex justify-center">
             <Image src="/PQT-Logo1.png" alt="PQT Logo" width={200} height={200} priority />
           </div>
@@ -25,16 +26,14 @@ export default function Home() {
             through education, research, and competitions.
           </p>
           <div className="flex justify-center mt-4">
-            <div className="w-32 h-32 overflow-hidden rounded-full border-4 border-orange-500 border-opacity-80">
-              <Image
-                src="/princeton-tiger.jpg"
-                alt="Princeton Tiger"
-                width={128}
-                height={128}
-                className="object-cover w-full h-full rounded-full"
-                priority
-              />
-            </div>
+            <Image
+              src="/princeton-tiger.jpg"
+              alt="Princeton Tiger"
+              width={128}
+              height={128}
+              className="object-cover w-32 h-32 rounded-full border-4 border-orange-500"
+              priority
+            />
           </div>
         </div>
       </section>
@@ -44,7 +43,7 @@ export default function Home() {
         <div className="content-box w-full max-w-4xl bg-gradient-to-b from-black to-orange-700 p-8 rounded-xl shadow-lg">
           <h2 className="text-3xl font-bold text-orange-500 text-center">Meet Our Team</h2>
 
-          {/* Team Member Grid */}
+          {/* Team Members Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-6">
             {[
               { name: "President", image: "/members/jerry_headshot.jpg" },
@@ -54,12 +53,7 @@ export default function Home() {
               { name: "Outreach Officer", image: "/members/tom_headshot.jpg" },
               { name: "Event Officer", image: "/members/andrew_headshot.png" }
             ].map((member, index) => (
-              <div key={index} className="flex flex-col items-center text-center">
-                <div className="w-32 h-32 overflow-hidden rounded-full border-4 border-orange-500 border-opacity-80">
-                  <Image src={member.image} alt={member.name} width={128} height={128} className="object-cover w-full h-full" />
-                </div>
-                <p className="mt-2 font-semibold w-32">{member.name}</p>
-              </div>
+              <MemberCard key={index} name={member.name} image={member.image} />
             ))}
           </div>
         </div>

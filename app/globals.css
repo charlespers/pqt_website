@@ -38,13 +38,15 @@ html, body {
 }
 
 /* Adjust width of the main content box */
+
+
 .content-box {
-  width: 80%; /* Ensures it fits in the 1/9 - 8/9 range */
   background: rgba(0, 0, 0, 0.85); /* Keeps the background semi-transparent */
-  padding: 4%;
   border-radius: 12px;
   box-shadow: 0 0 1.5vw rgba(255, 165, 0, 0.5); /* Orange glow */
-  text-align: left;
+  width: 85%; 
+  padding: 5%; /* Adjusted padding to prevent text cutoff */
+  text-align: center;
   margin-bottom: 5%;
 }
 
@@ -137,13 +139,18 @@ a:hover {
   box-shadow: 0px 1vw 3vw -1vw rgba(2,12,27,0.7);
 }
 
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+  text-align: right;
+}
+
 .navbar-links a {
   font-weight: 700;
   font-size: 1.2rem;
   padding: 1% 1.5%;
   color: white;
 }
-
 .navbar-links a:hover {
   color: #ff8f1f;
 }
@@ -226,6 +233,7 @@ a:hover {
   }
 }
 
+
 .member-card img {
   border-radius: 50%;
   object-fit: cover;
@@ -242,7 +250,7 @@ a:hover {
 
 .member-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(10vw, 1fr)); /* 2 columns */
+  grid-template-columns: repeat(2, minmax(10vw, 1fr)); /* Ensures two columns */
   gap: 5%;
   justify-content: center;
   align-items: center;
