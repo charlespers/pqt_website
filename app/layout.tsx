@@ -10,17 +10,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
-        {/* Fractal Background - Properly layered behind everything */}
+        {/* Background */}
         <FractalBackground />
 
-        {/* Navigation Bar */}
+        {/* Navbar */}
         <Navbar />
 
-        {/* Main Content */}
+        {/* Main Content Wrapper */}
         <main className="flex flex-col items-center min-h-screen px-4">
           <div className="content-wrapper">
             <div className="content-box">
-              {/* Princeton QT Logo - Centered */}
+              {/* Princeton QT Logo */}
               <div className="flex justify-center">
                 <Image src="/PQT-Logo1.png" alt="PQT Logo" width={200} height={200} />
               </div>
@@ -31,7 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 through education, research, and competitions.
               </p>
 
-              {/* Princeton Tiger Image (Now stands out on top) */}
+              {/* Princeton Tiger Image */}
               <div className="tiger-container">
                 <Image 
                   src="/princeton-tiger.png" 
@@ -41,10 +41,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   className="princeton-tiger" 
                 />
               </div>
-
-              {/* Inject Page-Specific Content */}
-              <div className="page-content">{children}</div>
             </div>
+
+            {/* Page-Specific Content - Now ensures all text boxes follow the same alignment */}
+            <div className="content-box page-content">{children}</div>
           </div>
         </main>
 
