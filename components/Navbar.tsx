@@ -15,9 +15,11 @@ export default function Navbar() {
         </Link>
 
         {/* Title (Centered) */}
+        <div className ="justify-center">
         <p className="flex-grow text-center text-sm sm:text-sm font-bold text-orange-500">
           Princeton Quantitative Traders
         </p>
+        </div>
 
         {/* Navigation Links (Right) */}
         <div className="navbar-links flex space-x-8">
