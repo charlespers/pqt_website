@@ -4,7 +4,6 @@ import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import FractalBackground from "./FractalBackground";
-import Image from "next/image";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -13,9 +12,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <FractalBackground />
         <Navbar />
 
-        {/* Center content in a limited width so fractal is visible on sides */}
-        <main className="flex flex-col items-center min-h-screen px-4">
-          <div className="content-container">{children}</div>
+        {/* Stacked sections with centered content */}
+        <main className="main-container">
+          <div className="content-box">{children}</div>
         </main>
 
         <Footer />
