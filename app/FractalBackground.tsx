@@ -6,9 +6,24 @@ const FractalBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [zoom, setZoom] = useState(1);
   const [canvasDimensions, setCanvasDimensions] = useState({
-    width: 0, // Initial width as 0 to prevent rendering on the server
-    height: 0, // Initial height as 0 to prevent rendering on the server
+    width: 0,
+    height: 0,
   });
+
+  // Throttle scroll events to avoid excessive zoom updates
+  const [isScrolling, setIsScrolling] = useState(false);
+  const throttleScroll = (event: WheelEvent) => {
+    if (isScrolling) return; // Prevent rapid zoom updates
+
+    setIsScrolling(true);
+
+    // Update zoom based on scroll direction
+    const newZoom = Math.max(1, zoom + event.deltaY * -0.005);
+    setZoom(newZoom);
+
+    // Delay state update to allow for smooth scrolling
+    setTimeout(() => setIsScrolling(false), 100); // Adjust this delay for smoother scrolling
+  };
 
   // Update canvas size on window resize
   const handleResize = () => {
@@ -31,16 +46,19 @@ const FractalBackground = () => {
       // Add resize event listener
       window.addEventListener("resize", handleResize);
 
+      // Add scroll event listener
+      window.addEventListener("wheel", throttleScroll);
+
       return () => {
-        // Clean up event listener on unmount
         window.removeEventListener("resize", handleResize);
+        window.removeEventListener("wheel", throttleScroll);
       };
     }
   }, []);
 
-  // Mandelbrot render function
+  // Mandelbrot render function with reduced complexity for performance
   const renderMandelbrot = (ctx: CanvasRenderingContext2D, width: number, height: number, zoom: number) => {
-    const maxIterations = 1000;
+    const maxIterations = 300; // Reduce the number of iterations to improve performance
     const centerX = -0.5;
     const centerY = 0;
     const scale = zoom;
@@ -84,12 +102,6 @@ const FractalBackground = () => {
     ctx.putImageData(imageData, 0, 0);
   };
 
-  // Handle scroll event to adjust zoom
-  const handleScroll = (event: WheelEvent) => {
-    const newZoom = Math.max(1, zoom + event.deltaY * -0.005);
-    setZoom(newZoom);
-  };
-
   useEffect(() => {
     const canvas = canvasRef.current;
     if (canvas && canvasDimensions.width && canvasDimensions.height) {
@@ -104,12 +116,10 @@ const FractalBackground = () => {
 
       render();
 
-      // Add event listener for scroll
-      window.addEventListener("wheel", handleScroll);
+      // Use requestAnimationFrame for smoother rendering
+      const animationId = requestAnimationFrame(render);
 
-      return () => {
-        window.removeEventListener("wheel", handleScroll);
-      };
+      return () => cancelAnimationFrame(animationId);
     }
   }, [zoom, canvasDimensions]);
 
@@ -118,7 +128,7 @@ const FractalBackground = () => {
   }
 
   return (
-    <div className="absolute top-0 left-0 w-full h-full z-0">
+    <div className="absolute top-0 left-0 w-full h-full z-[-1]"> {/* Ensures it's behind all content */}
       <canvas ref={canvasRef} width={canvasDimensions.width} height={canvasDimensions.height}></canvas>
     </div>
   );
