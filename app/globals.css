@@ -44,7 +44,6 @@ html, body {
 .content-box {
   width: 85%; 
   background: rgba(0, 0, 0, 0.85); /* Keeps the background semi-transparent */
-  max-width: 900px;
   padding: 5%; /* Prevents text from getting cut */
   border-radius: 12px;
   box-shadow: 0 0 1.5vw rgba(255, 165, 0, 0.5); /* Orange glow */
@@ -88,7 +87,6 @@ html, body {
   max-width: 90vw; /* Prevents it from getting too wide */
   background: rgba(0, 0, 0, 0.85); /* Semi-transparent black */
   padding: 4%;
-  border-radius: 12px;
   box-shadow: 0 0 1.5vw rgba(255, 165, 0, 0.5); /* Orange glow effect */
   text-align: left; /* Ensures left-aligned text */
   margin-bottom: 5%; /* Adds spacing between stacked sections */
@@ -110,12 +108,14 @@ h2 {
 }
 
 p {
+  text-align: center;
   font-size: 1.2rem;
   font-weight: 300;
   line-height: 1.6;
   color: #a8b2d1;
   text-shadow: 0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.6);
 }
+
 
 a {
   text-decoration: none;

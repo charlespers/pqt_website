@@ -8,7 +8,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="hero-section text-center w-full max-w-4xl">
         <h1 className="text-4xl sm:text-5xl font-bold uppercase text-orange-500">
-          Princeton Quantitative Traders
+            Princeton Quantitative Traders
         </h1>
         <h2 className="text-lg sm:text-2xl text-gold mt-4">
           Algorithmic Excellence. Mathematical Precision.
