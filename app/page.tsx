@@ -10,8 +10,8 @@ export default function Home() {
       </section>
 
       {/* Mission Statement Section */}
-      <section className="home-content flex flex-col items-center py-20">
-        <div className="content-box bg-gradient-to-b from-black to-orange-700 p-8 rounded-xl shadow-lg max-w-3xl text-left">
+      <section className="home-content">
+        <div className="content-box">
           <div className="flex justify-center">
             <Image 
               src="/PQT-Logo1.png" 
@@ -29,10 +29,37 @@ export default function Home() {
             <Image 
               src="/princeton-tiger.png" 
               alt="Princeton Tiger" 
-              width={100} 
-              height={100} 
+              width={150} 
+              height={150} 
+              className="princeton-tiger"
               priority
             />
+          </div>
+        </div>
+      </section>
+
+      {/* Meet Our Team Section */}
+      <section className="home-content">
+        <div className="content-box">
+          <h2 className="text-3xl font-bold text-orange-500 text-center">Meet Our Team</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-6 justify-center items-center">
+            {/* Placeholder for member headshots - Replace with actual images */}
+            <div className="team-member">
+              <Image src="/members/president.png" alt="President" width={150} height={150} className="rounded-full" />
+              <p className="text-center mt-2 font-semibold">President</p>
+            </div>
+            <div className="team-member">
+              <Image src="/members/Charles.png" alt="Vice President" width={150} height={150} className="rounded-full" />
+              <p className="text-center mt-2 font-semibold">Vice President</p>
+            </div>
+            <div className="team-member">
+              <Image src="/members/treasurer.png" alt="Treasurer" width={150} height={150} className="rounded-full" />
+              <p className="text-center mt-2 font-semibold">Treasurer</p>
+            </div>
+            <div className="team-member">
+              <Image src="/members/officer.png" alt="Officer" width={150} height={150} className="rounded-full" />
+              <p className="text-center mt-2 font-semibold">Officer</p>
+            </div>
           </div>
         </div>
       </section>
