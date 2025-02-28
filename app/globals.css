@@ -6,67 +6,28 @@ html, body {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  overflow: hidden; /* Prevents scrollbars on the page */
+  overflow: auto; /* Allows scrolling */
 }
 
-/* HEADERS & TEXT */
-h1 {
-  font-size: 4rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-h2 {
-  font-size: 2.5rem;
-}
-
-p {
-  font-size: 1.2rem;
-  font-weight: 300;
-  line-height: 1.6;
-  color: #a8b2d1;
-}
-
-a {
-  text-decoration: none;
-  transition: color 0.3s ease-in-out;
-}
-
-a:hover {
-  color: #8892b0;
-}
-
-/* NAVBAR */
-nav {
-  background: rgba(10, 25, 47, 0.9);
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  align-items: center;
-  backdrop-filter: blur(10px);
-  box-shadow: 0px 10px 30px -10px rgba(2,12,27,0.7);
-}
-
-.navbar-links a {
-  font-weight: 700;
-  font-size: 1.2rem;
-  padding: 10px 15px;
-  transition: 0.3s;
-}
-
-.navbar-links a:hover {
-  color: #64ffda;
-  text-shadow: 0 0 10px rgba(100, 255, 218, 0.8);
+/* BACKGROUND */
+.math-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2; /* Ensures fractal is truly in the background */
+  pointer-events: none; /* Prevents blocking interactions */
+  opacity: 0.6; /* Blends better */
+  filter: blur(2px); /* Slight blur to make text more readable */
 }
 
 /* HERO SECTION */
 .hero-section {
+  position: relative;
   text-align: center;
   padding: 100px 20px;
-  position: relative;
-  overflow: hidden;
+  z-index: 2; /* Ensures text is above background */
 }
 
 .hero-title {
@@ -78,20 +39,4 @@ nav {
   font-size: 1.5rem;
   font-weight: 300;
   color: #8892b0;
-}
-
-/* MATH BACKGROUND */
-.math-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1; /* Ensures the background stays behind other content */
-}
-
-
-@keyframes scroll-math {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
 }
