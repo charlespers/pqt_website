@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Gallery from "../components/Gallery";
 import MemberCard from "../components/MemberCard";
 
 export default function Home() {
@@ -56,14 +55,6 @@ export default function Home() {
               <MemberCard key={index} name={member.name} image={member.image} />
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Photo Gallery Section */}
-      <section className="home-content flex justify-center w-full mt-12">
-        <div className="content-box w-full max-w-4xl bg-gradient-to-b from-black to-orange-700 p-8 rounded-xl shadow-lg">
-          <h2 className="text-3xl font-bold text-orange-500 text-center">Photo Gallery</h2>
-          <Gallery />
         </div>
       </section>
     </div>
