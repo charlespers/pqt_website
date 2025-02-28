@@ -13,15 +13,15 @@ html, body {
 .main-content {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centers content */
+  align-items: center;
   justify-content: center;
   min-height: 100vh;
   padding: 40px 0;
 }
 
 .main-container {
-  position: relative; /* Makes sure content sits on top of fractal */
-  z-index: 10; /* Brings content above background */
+  position: relative;
+  z-index: 10;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,15 +39,22 @@ html, body {
 
 /* Adjust width of the main content box */
 .content-box {
-  width: 80%; /* Ensures it fits in the 1/9 - 8/9 range */
-  background: rgba(0, 0, 0, 0.85); /* Keeps the background semi-transparent */
+  width: 80%;
+  background: rgba(0, 0, 0, 0.85);
   padding: 40px;
   border-radius: 12px;
-  box-shadow: 0 0 15px rgba(255, 165, 0, 0.5); /* Orange glow */
+  box-shadow: 0 0 15px rgba(255, 165, 0, 0.5);
   text-align: left;
   margin-bottom: 50px;
 }
 
+/* Ensures all content stays within the screen on mobile */
+@media (max-width: 768px) {
+  .content-box {
+    width: 95%;
+    padding: 20px;
+  }
+}
 
 /* Center images inside content-box */
 .content-box img {
@@ -56,11 +63,11 @@ html, body {
 }
 
 .page-content {
-  width: 80%; /* Keeps it in the 1/9 - 8/9 range */
+  width: 80%;
   text-align: left;
 }
 
-/* Make the Princeton Tiger image stand out */
+/* Make the Princeton Tiger image circular */
 .tiger-container {
   position: relative;
   text-align: center;
@@ -72,18 +79,9 @@ html, body {
   mix-blend-mode: normal;
   display: block;
   margin: 0 auto;
-  filter: drop-shadow(0px 0px 10px rgba(255, 165, 0, 0.8)); /* Makes it stand out */
-}
-
-.content-container {
-  width: 85%; /* Adjust width: occupies center 1/3 to 2/3 */
-  max-width: 900px; /* Prevents it from getting too wide */
-  background: rgba(0, 0, 0, 0.85); /* Semi-transparent black */
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(255, 165, 0, 0.5); /* Orange glow effect */
-  text-align: left; /* Ensures left-aligned text */
-  margin-bottom: 50px; /* Adds spacing between stacked sections */
+  filter: drop-shadow(0px 0px 10px rgba(255, 165, 0, 0.8));
+  border-radius: 50%;
+  border: 4px solid #ff8f1f;
 }
 
 /* HEADERS & TEXT */
@@ -93,7 +91,7 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 2px;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-  color: #ff8f1f; /* Princeton orange */
+  color: #ff8f1f;
 }
 
 h2 {
@@ -120,33 +118,66 @@ a:hover {
 }
 
 /* NAVBAR */
-.navbar {
+.navbar-container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: black;
+  background: rgba(0, 0, 0, 0.9);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
   z-index: 1000;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-.navbar-container {
-  background: black;
+/* Centers the "Princeton Quantitative Traders" text */
+.navbar-container h1 {
+  text-align: center;
+  flex-grow: 1;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff8f1f;
+}
+
+/* Logo alignment */
+.logo img {
+  height: 50px;
+  width: auto;
+}
+
+/* Navigation Links */
+.navbar-links {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  box-shadow: 0px 10px 30px -10px rgba(2,12,27,0.7);
+  gap: 20px;
 }
 
 .navbar-links a {
-  font-weight: 700;
-  font-size: 1.2rem;
-  padding: 10px 15px;
+  font-size: 1rem;
+  font-weight: 600;
   color: white;
+  transition: color 0.3s ease-in-out;
 }
 
-.navbar-links a:hover {
-  color: #ff8f1f;
+.navbar-links a:hover,
+.navbar-links .active {
+  color: #ffa500;
+}
+
+/* Responsive Navbar - Stacks links on mobile */
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
 /* HERO SECTION */
@@ -172,13 +203,6 @@ a:hover {
   color: white;
 }
 
-/* LOGO */
-.logo img {
-  height: 50px;
-  width: auto;
-  display: block;
-}
-
 /* FOOTER */
 .footer-container {
   background: black;
@@ -192,59 +216,61 @@ a:hover {
   margin: 0 10px;
 }
 
-.math-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -10; /* Push it behind everything */
-  opacity: 0.6; /* Allow it to be visible but not overpower content */
-  pointer-events: none; /* Prevents it from blocking clicks */
-}
-
-
-
-
-/* PHOTOS BORDER MEMBERS */
-/* Ensures circular cutouts for images */
-.rounded-full {
-  border-radius: 50%;
-}
-.border-black {
-  border-color: black;
-}
-.border-gold {
-  border-color: gold;
-}
-.border-white {
-  border-color: white;
-}
-.object-cover {
-  object-fit: cover;
-}
-@media (max-width: 768px) {
-  .member-grid {
-    grid-template-columns: 1fr; /* Single column on small screens */
-  }
-}
-.member-card img {
-  border-radius: 50%;
-  object-fit: cover;
-}
-.member-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
+/* MEMBER IMAGES & TEAM GRID */
 .member-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(150px, 1fr)); /* 2 columns */
+  grid-template-columns: repeat(2, minmax(150px, 1fr));
   gap: 20px;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
+/* Ensures circular cutouts for images */
+.member-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
 
+.member-card img {
+  border-radius: 50%;
+  object-fit: cover;
+  width: 128px;
+  height: 128px;
+  border: 4px solid black;
+  outline: 4px solid gold;
+  box-shadow: 0px 0px 10px white;
+}
+
+/* Responsive fix: Single column on mobile */
+@media (max-width: 768px) {
+  .member-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* PHOTO GALLERY */
+.gallery-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  height: 300px;
+  position: relative;
+}
+
+.gallery-image {
+  width: 100%;
+  height: auto;
+  transition: opacity 1s ease-in-out;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .gallery-container {
+    height: 200px;
+  }
+}
