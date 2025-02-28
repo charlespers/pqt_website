@@ -40,7 +40,7 @@ export default function Home() {
 
       {/* Meet Our Team Section */}
       <section className="home-content">
-        <div className="content-box">
+        <div className="content-box content-wrapper">
           <h2 className="text-3xl font-bold text-orange-500 text-center">Meet Our Team</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-6 justify-center items-center">
             {/* Placeholder for member headshots - Replace with actual images */}
@@ -49,7 +49,7 @@ export default function Home() {
               <p className="text-center mt-2 font-semibold">President</p>
             </div>
             <div className="team-member">
-              <Image src="/members/Charles.png" alt="Vice President" width={150} height={150} className="rounded-full" />
+              <Image src="/members/Charles.jpeg" alt="Vice President" width={150} height={150} className="rounded-full" />
               <p className="text-center mt-2 font-semibold">Vice President</p>
             </div>
             <div className="team-member">
