@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <div className="flex flex-col items-center text-white py-20 px-4">
+    <div className="flex flex-col items-center text-white w-full max-w-4xl p-8">
       <div className="content-box w-full max-w-6xl bg-gradient-to-b from-black to-orange-700 p-10 rounded-xl shadow-lg">
         <h2 className="text-4xl text-orange-500 font-bold mb-10 text-center">
           About Princeton QT
