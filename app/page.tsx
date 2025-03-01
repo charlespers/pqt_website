@@ -38,23 +38,23 @@ export default function Home() {
           </h3>
           <div className="what-we-do">
             <p className="text-lg mt-4">
-              <strong><span style="color: orange-500">Strategy Research</span></strong> – We research and build algorithmic trading strategies using statistical models, 
+              <strong><span style="color: orange">Strategy Research</span></strong> – We research and build algorithmic trading strategies using statistical models, 
               machine learning, and financial data analysis.
             </p>
             <p className="text-lg mt-2">
-              <strong><span style="color: orange-500">Technical Workshops</span></strong> – We offer hands-on training in Python, backtesting frameworks, and trading infrastructure 
+              <strong><span style="color: orange">Technical Workshops</span></strong> – We offer hands-on training in Python, backtesting frameworks, and trading infrastructure 
               to prepare members for real-world applications.
             </p>
             <p className="text-lg mt-2">
-              <strong><span style="color: orange-500">Trading Competitions</span></strong> – Members participate in simulated and live trading competitions to test strategies 
+              <strong><span style="color: orange">Trading Competitions</span></strong> – Members participate in simulated and live trading competitions to test strategies 
               in dynamic market conditions.
             </p>
             <p className="text-lg mt-2">
-              <strong><span style="color: orange-500">Industry & Career Development</span></strong> – We connect members with professionals, host guest speakers, and provide 
+              <strong><span style="color: orange">Industry & Career Development</span></strong> – We connect members with professionals, host guest speakers, and provide 
               resources for careers in quantitative finance.
             </p>
             <p className="text-lg mt-2">
-              <strong><span style="color: orange-500">Collaborations & Professionalism</span></strong> – We work with other trading clubs and research groups to explore 
+              <strong><span style="color: orange">Collaborations & Professionalism</span></strong> – We work with other trading clubs and research groups to explore 
               cutting-edge developments in quantitative finance.
             </p>
             <p className="text-lg mt-4 font-bold text-orange-500">
